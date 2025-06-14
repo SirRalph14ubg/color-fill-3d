@@ -11,7 +11,7 @@
   "rewrites": [
     {
       "source": "/Build/(.*)\\.unityweb",
-      "destination": "/Build/$1.unityweb"  // direct pass-through
+      "destination": "/Build/$1.unityweb" 
     },
     {
       "source": "/(.*)",

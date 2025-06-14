@@ -1,14 +1,21 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
   "headers": [
     {
-      "source": "/Build/(.*).unityweb",
+      "source": "/Build/(.*)\\.unityweb",
       "headers": [
         { "key": "Content-Encoding", "value": "gzip" },
         { "key": "Content-Type", "value": "application/octet-stream" }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/Build/(.*)\\.unityweb",
+      "destination": "/Build/$1.unityweb"  // direct pass-through
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
